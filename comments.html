@@ -1,0 +1,22 @@
+<ul class="breadcrumbs">
+  <li>Comments on <a href="<%= TemplateTags.getPreviousScreenLink() %>">"<%= post.title %>"</a></li>
+</ul>
+
+<% if(comments.length){ %>
+    <% _.each( comments, function( comment ){ %>
+        <div class="row">
+            <div class="small-3 large-2 small-offset-<% print(comment.depth-1); %> large-offset-<% print(comment.depth-1); %> columns">
+                <span class="label"><%= comment.author %><br> <%= TemplateTags.formatDate(comment.date,'d/m/Y') %></span>
+            </div>
+            <div class="small-<% print( 9 - (comment.depth-1) ); %> large-<% print( 10 - (comment.depth-1) ); %> columns">
+                <p><%= comment.content %></p>
+            </div>
+        </div>
+    <% }); %>
+<% }else{ %>
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            No post found!
+        </div>
+    </div>
+<% } %>

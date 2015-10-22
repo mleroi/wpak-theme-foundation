@@ -1,0 +1,42 @@
+
+<ul class="breadcrumbs">
+  <li><%= list_title %><% total > 0 ? print(' - ' + total) : print(' - No') %> post<% total > 1 ? print('s') : '' %></li>
+</ul>
+
+<% if(posts.length){ %>
+    <% _.each( posts, function( post ){ %>
+        <% if( post.thumbnail.src && post.thumbnail.src.length ){ %>
+            <div class="row">
+                <div class="small-3 large-2 columns">
+                    <img src="<%= post.thumbnail.src %>" alt="<%= post.title %>" width="64" height="64">
+                </div>
+                <div class="small-9 large-10 columns">
+                    <a href="<%= TemplateTags.getPostLink(post.id) %>"><%= post.title %></a>
+                    <p><%= post.excerpt %></p>
+                </div>
+            </div>
+        <% }else{ %>
+            <div class="row">
+                <div class="small-12 large-12 columns">
+                    <a href="<%= TemplateTags.getPostLink(post.id) %>"><%= post.title %></a>
+                    <p><%= post.excerpt %></p>
+                </div>
+            </div>
+        <% } %>
+    <% }); %>
+<% }else{ %>
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            No post found!
+        </div>
+    </div>
+<% } %>
+
+
+<% if( TemplateTags.displayGetMoreLink() ){ %> 
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            <button class="get-more expand">Get more posts (<%= TemplateTags.getMoreLinkNbLeft() %> left)</button>
+        </div>
+    </div>
+<% } %>

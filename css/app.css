@@ -1,0 +1,36 @@
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#refresh.refreshing{
+    -webkit-animation-name: rotating;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+h1 i {
+    font-size: 27px;
+    vertical-align: middle;
+}
+
+h1 span {
+    padding-left: 10px;
+}
+
+#top-actions-wrapper{
+    float: left;
+    color: #fff;
+    padding-left: 17px;
+    width: 43px;
+}
+
+.post-content img{
+    width:100%;
+}
+

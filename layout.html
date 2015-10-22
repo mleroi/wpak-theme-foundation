@@ -1,0 +1,22 @@
+<div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1>
+                    <div href="#" id="top-actions-wrapper">
+                        <i class="fi-arrow-left" id="back" style="display:none"></i>
+                        <i class="fi-refresh" id="refresh"></i>
+                    </div>
+                    <a href="#" id="title-link">
+                        <span><%= app_title %></span>
+                    </a>
+                </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+        <%= menu %>
+    </nav>
+</div>
+
+<%= content %>
